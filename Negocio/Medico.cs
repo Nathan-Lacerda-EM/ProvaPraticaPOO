@@ -26,6 +26,11 @@ namespace Negocio
             _especialidades.Add(especialidade);
         }
 
+        public void SetEspecialidades(Especialidade[] especialidades)
+        {
+            _especialidades = especialidades.ToList();
+        }
+
         public Medico(string nome, DateTime dataDeNascimento, 
             Endereco endereco, int idade, int crm, Especialidade[] especialidades)
         {
@@ -34,7 +39,7 @@ namespace Negocio
             this.Endereco = endereco;
             this.Idade = idade;
             this.CRM = crm;
-            this._especialidades = especialidades.ToList();
+            SetEspecialidades(especialidades);
         }
     }
 }
